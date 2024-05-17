@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<form>
+    <fields addfieldpath="/administrator/components/com_fabrik/models/fields" name="params">
+        <fieldset name="plg-form-save-as-copy">
+            <field name="save_as_copy_created_date_element"
+                   type="listfields"
+                   highlightpk="true"
+                   description="PLG_FORM_SAVE_AS_COPY_CREATED_DATE_ELEMENT_DESC"
+                   label="PLG_FORM_SAVE_AS_COPY_CREATED_DATE_ELEMENT_LABEL"/>
+        </fieldset>	
+    </fields>
+</form>
