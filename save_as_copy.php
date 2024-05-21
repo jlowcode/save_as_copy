@@ -60,7 +60,15 @@ class PlgFabrik_FormSave_as_copy extends PlgFabrik_Form
 			{
 				$db->execute();
 				$input = $this->app->input;
-				$u = str_replace('rowid=' . $_GET["rowid"], 'rowid=' . $new_id_copy, $_SERVER["REQUEST_URI"]);				
+				if (isset($_GET["rowid"])){
+					//http://educett/index.php?option=com_fabrik&view=form&formid=19&rowid=19062
+					$u = str_replace('rowid=' . $_GET["rowid"], 'rowid=' . $new_id_copy, $_SERVER["REQUEST_URI"]);				
+				} else {
+					//http://educett/protocolo/form/19/19062
+					//http://educett/component/fabrik/form/19/19062
+					//http://educett/component/fabrik/form/19/19062?Itemid=
+					$u = str_replace("/form/{$_POST['listid']}/{$_POST['rowid']}", "/form/{$_POST['listid']}/" . $new_id_copy, $_SERVER['REQUEST_URI']);
+				}			
 				
 				if ($this->config->get('sef')) {
 					$url = JRoute::_($u);
